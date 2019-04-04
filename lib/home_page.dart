@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:owly/fragments/beranda_page.dart';
 import 'package:owly/fragments/berita_page.dart';
+import 'package:owly/config/configs.dart';
 
 class DrawerItem {
   String title;
@@ -12,7 +13,7 @@ class HomePage extends StatefulWidget {
   final drawerItems = [
     new DrawerItem("Beranda", Icons.home),
     new DrawerItem("Berita", Icons.assignment),
-    //new DrawerItem("Chat", Icons.forum),
+    new DrawerItem("Daftar Absen", Icons.library_books),
     new DrawerItem("Profil Sekolah", Icons.account_balance)
   ];
 
@@ -33,7 +34,6 @@ class HomePageState extends State<HomePage> {
         return new Berita();
       case 2:
         return new Berita();
-
       default:
         return new Text("Error");
     }
@@ -69,9 +69,9 @@ class HomePageState extends State<HomePage> {
         child: new Column(
           children: <Widget>[
             new UserAccountsDrawerHeader(
-              accountName: new Text("Mahajir Taqarrub"), 
-              accountEmail: Text("12150026", style: TextStyle(fontSize: 12),), 
-              currentAccountPicture: CircleAvatar(),
+              accountName: new Text("Mahajir Taqarrub",style: TextStyle(fontFamily: Configs.defaultFont,fontWeight: FontWeight.w100)), 
+              accountEmail: Text("KELAS XI.B - NIS: 12150026", style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12)),
+              currentAccountPicture: CircleAvatar(backgroundImage: new AssetImage('assets/images/student-logo.png')),
             ),
             
             new Column(children: drawerOptions)

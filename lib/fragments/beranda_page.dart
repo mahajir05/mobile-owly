@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:owly/class/class_beranda_menu.dart';
+import 'package:owly/config/configs.dart';
 
 class Home extends StatelessWidget {
 
@@ -14,23 +15,23 @@ class Home extends StatelessWidget {
           height: 300,
           child: Stack(
             children: <Widget>[
-              new DecoratedBox(
-                position: DecorationPosition.foreground,
-                decoration: new BoxDecoration(
-                  color: Colors.black.withOpacity(0.4)
-                ),
-                child: new Image.asset(
-                  'assets/images/sekolah.jpg',
-                  fit: BoxFit.cover,
-                  height: 270,
-                ),
-              ),
+              // new DecoratedBox(
+              //   position: DecorationPosition.foreground,
+              //   decoration: new BoxDecoration(
+              //     color: Colors.black.withOpacity(0.4)
+              //   ),
+              //   child: new Image.asset(
+              //     'assets/images/sekolah.jpg',
+              //     fit: BoxFit.cover,
+              //     height: 200,
+              //   ),
+              // ),
 
               new AppBar(
-                backgroundColor: Colors.transparent,
-                title: Text(
-                  "SMAN 14 KOTA BEKASI",
+                backgroundColor: Colors.blueAccent,
+                title: Text(Configs.schoolName,
                   style: TextStyle(
+                    fontFamily: Configs.defaultFont,
                     fontSize: 18,
                     fontWeight: FontWeight.w200
                   ),
@@ -39,19 +40,38 @@ class Home extends StatelessWidget {
               ),
 
               new Positioned.fill(
-                top: 220,
-                bottom: 0.0,
+                top: 80,
+                bottom: 90,
                 left: 15.0,
                 right: 15.0,
                 child: new Card(
                   elevation: 4.0,
+                  child: Image.network(Configs.dashboardLogoURL,
+                fit: BoxFit.fill,
+              ),
+              shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              ),
+              margin: EdgeInsets.all(5),
+                ),
+              ),
+
+              
+              new Positioned.fill(
+                top: 220,
+                bottom: 10,
+                left: 15.0,
+                right: 15.0,
+                child: new Card(
+                  elevation: 3.0,
                   child: ListTile(
-                    title: Text("Mahajir Taqarrub", style: TextStyle(fontWeight: FontWeight.bold),),
-                    subtitle: Text("XII IPA 2", style: TextStyle(fontSize: 12.5),),
-                    trailing: Text("SISWA", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),),
+                    title: Text("Mahajir Taqarrub", style: TextStyle(fontFamily: Configs.defaultFont,fontWeight: FontWeight.w100),),
+                    subtitle: Text("XII IPA 2", style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
+                    trailing: Text("SISWA", style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 20, fontWeight: FontWeight.w500),),
                   ),
                 ),
               ),
+
             ],
           ),
         ),

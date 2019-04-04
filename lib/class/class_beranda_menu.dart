@@ -3,6 +3,7 @@ import 'package:owly/absen_page.dart';
 import 'package:owly/daftar_guru_page.dart';
 import 'package:owly/jadwal_pelajaran_page.dart';
 import 'package:owly/nilai_page.dart';
+import 'package:owly/config/configs.dart';
 
 class BerandaMenu {
   Widget page;
@@ -30,20 +31,20 @@ List<BerandaMenu> berandaMenu = <BerandaMenu> [
     page: Nilai(),
     menuIcon: 'assets/icons/nilai.png',
     menuName: 'TRANSKIP NILAI',
-    backgroundMenuColor: Colors.greenAccent.withOpacity(0.9),
+    backgroundMenuColor: Colors.redAccent.withOpacity(0.9),
   ),
   
   new BerandaMenu(
     page: JadwalPelajaran(),
     menuIcon: 'assets/icons/jadwal.png',
     menuName: 'JADWAL PELAJARAN',
-    backgroundMenuColor: Colors.yellow.withOpacity(0.9),
+    backgroundMenuColor: Colors.blueAccent.withOpacity(0.9),
   ),
   
   new BerandaMenu(
     page: DaftarGuru(),
     menuIcon: 'assets/icons/teacher.png',
     menuName: 'DAFTAR GURU',
-    backgroundMenuColor: Colors.lightGreenAccent.withOpacity(0.9),
+    backgroundMenuColor: Colors.greenAccent.withOpacity(0.9),
   ),
 ];

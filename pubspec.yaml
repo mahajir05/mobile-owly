@@ -36,9 +36,15 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
+  fonts:
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/ubuntu/Ubuntu-Regular.ttf
+        - asset: assets/fonts/ubuntu/Ubuntu-Italic.ttf
+          style: italic
+        - asset: assets/fonts/ubuntu/Ubuntu-Bold.ttf
+          weight: 700
+        
   uses-material-design: true
 
   assets:
@@ -52,6 +58,8 @@ flutter:
     - assets/icons/nilai.png
     - assets/icons/teacher.png
     - assets/icons/ranking.png
+
+    - assets/images/student-logo.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
