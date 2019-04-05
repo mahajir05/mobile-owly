@@ -14,7 +14,9 @@ class HomePage extends StatefulWidget {
     new DrawerItem("Beranda", Icons.home),
     new DrawerItem("Berita", Icons.assignment),
     new DrawerItem("Daftar Absen", Icons.library_books),
-    new DrawerItem("Profil Sekolah", Icons.account_balance)
+    new DrawerItem("E-Learning", Icons.library_books),
+    new DrawerItem("Profil Sekolah", Icons.account_balance),
+    new DrawerItem("Pembayaran", Icons.library_books),
   ];
 
   @override

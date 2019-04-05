@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\mobile-owly\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "E:\\Project Flutter\\Project Gua\\mobile-owly\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "C:\\mobile-owly\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "E:\\Project Flutter\\Project Gua\\mobile-owly\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

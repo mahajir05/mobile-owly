@@ -95,7 +95,7 @@ class _DaftarGuru extends State<DaftarGuru> {
                 itemBuilder: (context, index) {
                   Color color;
 
-                  if (index%2 == 1) {
+                  if (index%2 == 0) {
                     color = Colors.grey[100];
                   } else {
                     color = Colors.white;

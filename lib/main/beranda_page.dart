@@ -46,19 +46,20 @@ class Home extends StatelessWidget {
                 right: 15.0,
                 child: new Card(
                   elevation: 4.0,
-                  child: Image.network(Configs.dashboardLogoURL,
-                fit: BoxFit.fill,
-              ),
-              shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-              ),
-              margin: EdgeInsets.all(5),
+                  child: Image.network(
+                    Configs.dashboardLogoURL,
+                    fit: BoxFit.fill,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  margin: EdgeInsets.all(5),
                 ),
               ),
 
               
               new Positioned.fill(
-                top: 220,
+                top: 215,
                 bottom: 10,
                 left: 15.0,
                 right: 15.0,
