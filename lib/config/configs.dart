@@ -11,7 +11,6 @@ static const String schoolName = "SMAN 14 KOTA BEKASI";
 static const String dashboardLogoURL = "http://siakadcloud.com/assets-new/img/logosiakadcloud.png";
 // default font name
 static const String defaultFont = "Ubuntu";
-static const String defaultFontA = "Ubuntu";
 
 
 }

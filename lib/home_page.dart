@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:owly/fragments/beranda_page.dart';
-import 'package:owly/fragments/berita_page.dart';
+import 'package:owly/main/beranda_page.dart';
+import 'package:owly/main/berita_page.dart';
 import 'package:owly/config/configs.dart';
 
 class DrawerItem {
