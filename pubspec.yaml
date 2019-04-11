@@ -53,6 +53,7 @@ flutter:
     - assets/images/sekolah.jpg
     - assets/images/background_button.jpg
     - assets/images/gradeori.jpg
+    - assets/images/backgroundabsen.jpg
     - assets/images/grade.png
 
     - assets/icons/absen.png
@@ -60,6 +61,11 @@ flutter:
     - assets/icons/nilai.png
     - assets/icons/teacher.png
     - assets/icons/ranking.png
+    - assets/icons/book.png
+    - assets/icons/money-bag.png
+    - assets/images/rank1.png
+    - assets/images/rank2.png
+    - assets/images/rank3.png
 
     - assets/images/student-logo.png
 

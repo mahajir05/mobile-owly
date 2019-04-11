@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:owly/main/beranda_page.dart';
 import 'package:owly/main/berita_page.dart';
 import 'package:owly/config/configs.dart';
+import 'package:owly/main/elearning_page.dart';
 
 class DrawerItem {
   String title;
@@ -10,13 +11,12 @@ class DrawerItem {
 }
 
 class HomePage extends StatefulWidget {
-  final drawerItems = [
+  final drawerItems1 = [
     new DrawerItem("Beranda", Icons.home),
     new DrawerItem("Berita", Icons.assignment),
-    new DrawerItem("Daftar Absen", Icons.library_books),
-    new DrawerItem("E-Learning", Icons.library_books),
     new DrawerItem("Profil Sekolah", Icons.account_balance),
-    new DrawerItem("Pembayaran", Icons.library_books),
+    new DrawerItem("E-Learning", Icons.book),
+    new DrawerItem("Pembayaran", Icons.payment)
   ];
 
   @override
@@ -36,6 +36,10 @@ class HomePageState extends State<HomePage> {
         return new Berita();
       case 2:
         return new Berita();
+      case 3:
+        return new Elearning();
+      case 4:
+        return new Berita();
       default:
         return new Text("Error");
     }
@@ -48,27 +52,39 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var drawerOptions = <Widget>[];
-    for (var i = 0; i < widget.drawerItems.length; i++) {
-      var d = widget.drawerItems[i];
-      drawerOptions.add(
-        new ListTile(
-          leading: new Icon(d.icon),
-          title: new Text(d.title),
-          selected: i == _selectedDrawerIndex,
-          onTap: () => _onSelectItem(i),
-        )
-      );
-    }
+    var drawerOptions1 = new ListView.builder(
+      itemCount: widget.drawerItems1.length-2,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        var d = widget.drawerItems1[index];
+        return new ListTile(
+          leading: Icon(d.icon),
+          title: Text(d.title),
+          selected: index == _selectedDrawerIndex,
+          onTap: () => _onSelectItem(index),
+        );
+      },
+    );
+
+    var drawerOptions2 = new ListView.builder(
+      itemCount: widget.drawerItems1.length-3,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        var d = widget.drawerItems1[index+3];
+        return new ListTile(
+          leading: Icon(d.icon),
+          title: Text(d.title),
+          selected: index+3 == _selectedDrawerIndex,
+          onTap: () => _onSelectItem(index+3),
+        );
+      },
+    );
 
     return new Scaffold(
-      // appBar: new AppBar(
-      //   // here we display the title corresponding to the fragment
-      //   // you can instead choose to have a static title
-      //   title: new Text(widget.drawerItems[_selectedDrawerIndex].title),
-      // ),
       drawer: new Drawer(
-        child: new Column(
+        child: new ListView(
           children: <Widget>[
             new UserAccountsDrawerHeader(
               accountName: new Text("Mahajir Taqarrub",style: TextStyle(fontFamily: Configs.defaultFont,fontWeight: FontWeight.w100)), 
@@ -76,7 +92,13 @@ class HomePageState extends State<HomePage> {
               currentAccountPicture: CircleAvatar(backgroundImage: new AssetImage('assets/images/student-logo.png')),
             ),
             
-            new Column(children: drawerOptions)
+            new Column(
+              children: <Widget>[
+                drawerOptions1,
+                new Divider(),
+                drawerOptions2
+              ],
+            )
           ],
         ),
       ),

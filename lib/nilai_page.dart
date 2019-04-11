@@ -49,11 +49,6 @@ class _Nilai extends State<Nilai> {
                 ));
               },
             ),
-
-            // new IconButton(
-            //   icon: Icon(Icons.flip),
-            //   onPressed: () {},
-            // ),
           ],
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(250),
@@ -76,7 +71,10 @@ class _Nilai extends State<Nilai> {
                   child: new TabBar(
                     indicator: BoxDecoration(
                       color: Colors.grey[50],
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10))
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(10), 
+                        topRight: Radius.circular(10)
+                      )
                     ),
                     labelColor: Colors.black,
                     unselectedLabelColor: Colors.white,

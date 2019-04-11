@@ -12,7 +12,7 @@ class Home extends StatelessWidget {
     return Column(
       children: <Widget>[
         new Container(
-          height: 300,
+          height: 170,
           child: Stack(
             children: <Widget>[
               // new DecoratedBox(
@@ -39,27 +39,27 @@ class Home extends StatelessWidget {
                 elevation: 0.0,
               ),
 
-              new Positioned.fill(
-                top: 80,
-                bottom: 90,
-                left: 15.0,
-                right: 15.0,
-                child: new Card(
-                  elevation: 4.0,
-                  child: Image.network(
-                    Configs.dashboardLogoURL,
-                    fit: BoxFit.fill,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  margin: EdgeInsets.all(5),
-                ),
-              ),
+              // new Positioned.fill(
+              //   top: 80,
+              //   bottom: 90,
+              //   left: 15.0,
+              //   right: 15.0,
+              //   child: new Card(
+              //     elevation: 4.0,
+              //     child: Image.network(
+              //       Configs.dashboardLogoURL,
+              //       fit: BoxFit.fill,
+              //     ),
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(10.0),
+              //     ),
+              //     margin: EdgeInsets.all(5),
+              //   ),
+              // ),
 
               
               new Positioned.fill(
-                top: 215,
+                top: 80,
                 bottom: 10,
                 left: 15.0,
                 right: 15.0,
@@ -72,7 +72,6 @@ class Home extends StatelessWidget {
                   ),
                 ),
               ),
-
             ],
           ),
         ),
@@ -82,11 +81,10 @@ class Home extends StatelessWidget {
             itemCount: berandaMenu.length,
             padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2
+              crossAxisCount: 3
             ),
             itemBuilder: (context, index) {
               return Card(
-                margin: EdgeInsets.all(15.0),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0)
                 ),
@@ -128,7 +126,6 @@ class Home extends StatelessWidget {
                               berandaMenu[index].menuIcon,
                               height: 50,
                               width: 50,
-                              //scale: 0.5,
                             )
                           ),
                         ),
@@ -145,47 +142,17 @@ class Home extends StatelessWidget {
                               ),
                               color: Colors.black.withOpacity(0.4)
                             ),
-                            //color: Colors.black.withOpacity(0.4),
                             child: new Center(
                               child: Text(
                                   berandaMenu[index].menuName,
                                   style: TextStyle(
                                     fontSize: 12,
                                     color: Colors.white,
-                                    //fontWeight: FontWeight.bold
                                   ),
                                 ),
                             ),
                           ),
                         )
-
-                        // new Positioned.fill(
-                        //   top: queryData.padding.top + 50,
-                        //   child: new Center(
-                        //     child: new Container(
-                        //       height: MediaQuery.of(context).size.height,
-                        //       width: MediaQuery.of(context).size.width,
-                        //       decoration: BoxDecoration(
-                        //         borderRadius: BorderRadius.only(
-                        //           bottomLeft: const Radius.circular(10.0),
-                        //           bottomRight: const Radius.circular(10.0)
-                        //         ),
-                        //         color: Colors.black.withOpacity(0.4)
-                        //       ),
-                        //       //color: Colors.black.withOpacity(0.4),
-                        //       child: new Center(
-                        //         child: Text(
-                        //             berandaMenu[index].menuName,
-                        //             style: TextStyle(
-                        //               fontSize: 12,
-                        //               color: Colors.white,
-                        //               //fontWeight: FontWeight.bold
-                        //             ),
-                        //           ),
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
                       ],
                     )
                   ),

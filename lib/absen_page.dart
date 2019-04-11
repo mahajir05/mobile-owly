@@ -13,112 +13,163 @@ class _Absen extends State<Absen> {
     MediaQueryData queryData = MediaQuery.of(context);
     
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Laporan Absen',style: TextStyle(fontFamily: Configs.defaultFont)),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Laporan Absen',style: TextStyle(fontFamily: Configs.defaultFont)),
+      //   elevation: 1.5,
+      // ),
       body: Container(
         child: Column(
           children: <Widget>[
             new Container(
               width: queryData.size.width,
-              height: 130,
-              margin: EdgeInsets.only(
-                top: 10
-              ),
-              //color: Colors.blue[200],
-              child: Row(
+              height: 230,
+              margin: EdgeInsets.only(bottom: 5),
+              child: Stack(
                 children: <Widget>[
-                  new Expanded(
-                    flex: 1,
-                    child: Card(
-                      child: Column(
-                        children: <Widget>[
-                          new Container(
-                            child: Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Center(
-                                child: Text('Izin',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
-                              ),
-                            ),
-                          ),
-
-                          new Container(
-                            height: 2,
-                            width: queryData.size.width,
-                            color: Colors.black26,
-                          ),
-
-                          new Expanded(
-                            child: Container(
-                              child: Center(
-                                child: Text('102',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 18)),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
+                  new DecoratedBox(
+                    position: DecorationPosition.foreground,
+                    decoration: new BoxDecoration(
+                      color: Colors.blue.withOpacity(0.6),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        stops: [0.35, 0.5],
+                        colors: [
+                          Colors.blue,
+                          Colors.blue[200]
+                        ]
+                      )
+                    ),
+                    child: new Image.asset(
+                      'assets/images/backgroundabsen.jpg',
+                      fit: BoxFit.cover,
+                      height: 230,
+                      width: queryData.size.width,
                     ),
                   ),
 
-                  new Expanded(
-                    flex: 1,
-                    child: Card(
-                      child: Column(
-                        children: <Widget>[
-                          new Container(
-                            child: Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Center(
-                                child: Text('Sakit',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
-                              ),
-                            ),
-                          ),
-
-                          new Container(
-                            height: 2,
-                            width: queryData.size.width,
-                            color: Colors.black26,
-                          ),
-
-                          new Expanded(
-                            child: Container(
-                              child: Center(
-                                child: Text('512',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 18)),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
+                  new AppBar(
+                    title: Text('Laporan Absen'),
+                    backgroundColor: Colors.transparent,
                   ),
 
-                  new Expanded(
-                    flex: 2,
-                    child: Card(
-                      child: Column(
+                  new Positioned.fill(
+                    top: 100,
+                    bottom: 20,
+                    left: 10.0,
+                    right: 10.0,
+                    child: new Container(
+                      width: queryData.size.width,
+                      height: queryData.size.height,
+                      child: Row(
                         children: <Widget>[
-                          new Container(
-                            child: Padding(
-                              padding: EdgeInsets.all(10),
-                              child: Center(
-                                child: Text('Tanpa Keterangan',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
+                          new Expanded(
+                            flex: 1,
+                            child: Card(
+                              elevation: 10.0,
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 15
+                              ),
+                              child: Column(
+                                children: <Widget>[
+                                  new Container(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Center(
+                                        child: Text('Izin',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
+                                      ),
+                                    ),
+                                  ),
+
+                                  new Container(
+                                    height: 2,
+                                    width: queryData.size.width,
+                                    color: Colors.black26,
+                                  ),
+
+                                  new Expanded(
+                                    child: Container(
+                                      child: Center(
+                                        child: Text('102',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 18)),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
-                          ),
-
-                          new Container(
-                            height: 2,
-                            width: queryData.size.width,
-                            color: Colors.black26,
                           ),
 
                           new Expanded(
-                            child: Container(
-                              child: Center(
-                                child: Text('1256',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 18)),
+                            flex: 1,
+                            child: Card(
+                              elevation: 10.0,
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 15
+                              ),
+                              child: Column(
+                                children: <Widget>[
+                                  new Container(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Center(
+                                        child: Text('Sakit',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
+                                      ),
+                                    ),
+                                  ),
+
+                                  new Container(
+                                    height: 2,
+                                    width: queryData.size.width,
+                                    color: Colors.black26,
+                                  ),
+
+                                  new Expanded(
+                                    child: Container(
+                                      child: Center(
+                                        child: Text('512',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 18)),
+                                      ),
+                                    ),
+                                  )
+                                ],
                               ),
                             ),
-                          )
+                          ),
+
+                          new Expanded(
+                            flex: 1,
+                            child: Card(
+                              elevation: 10.0,
+                              margin: EdgeInsets.symmetric(
+                                horizontal: 15
+                              ),
+                              child: Column(
+                                children: <Widget>[
+                                  new Container(
+                                    child: Padding(
+                                      padding: EdgeInsets.all(10),
+                                      child: Center(
+                                        child: Text('Alpa',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
+                                      ),
+                                    ),
+                                  ),
+
+                                  new Container(
+                                    height: 2,
+                                    width: queryData.size.width,
+                                    color: Colors.black26,
+                                  ),
+
+                                  new Expanded(
+                                    child: Container(
+                                      child: Center(
+                                        child: Text('203',style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 18)),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -137,6 +188,9 @@ class _Absen extends State<Absen> {
                   var dateFormat = new DateFormat('dd MMMM yyyy').format(tanggal);
                   
                   return Container(
+                    margin: EdgeInsets.symmetric(
+                      horizontal: 10,
+                    ),
                     child: ListView.builder(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
