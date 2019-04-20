@@ -12,63 +12,53 @@ class Home extends StatelessWidget {
     return Column(
       children: <Widget>[
         new Container(
-          height: 170,
+          height: 200,
           child: Stack(
             children: <Widget>[
-              // new DecoratedBox(
-              //   position: DecorationPosition.foreground,
-              //   decoration: new BoxDecoration(
-              //     color: Colors.black.withOpacity(0.4)
-              //   ),
-              //   child: new Image.asset(
-              //     'assets/images/sekolah.jpg',
-              //     fit: BoxFit.cover,
-              //     height: 200,
-              //   ),
-              // ),
-
               new AppBar(
-                backgroundColor: Colors.blueAccent,
-                title: Text(Configs.schoolName,
+                elevation: 0.0,
+                title: Text(
+                  Configs.schoolName,
                   style: TextStyle(
                     fontFamily: Configs.defaultFont,
                     fontSize: 18,
                     fontWeight: FontWeight.w200
                   ),
                 ),
-                elevation: 0.0,
               ),
 
-              // new Positioned.fill(
-              //   top: 80,
-              //   bottom: 90,
-              //   left: 15.0,
-              //   right: 15.0,
-              //   child: new Card(
-              //     elevation: 4.0,
-              //     child: Image.network(
-              //       Configs.dashboardLogoURL,
-              //       fit: BoxFit.fill,
-              //     ),
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(10.0),
-              //     ),
-              //     margin: EdgeInsets.all(5),
-              //   ),
-              // ),
-
-              
               new Positioned.fill(
-                top: 80,
-                bottom: 10,
-                left: 15.0,
-                right: 15.0,
-                child: new Card(
-                  elevation: 3.0,
+                top: 105,
+                bottom: 20,
+                left: 20.0,
+                right: 20.0,
+                child: new Container(
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlue[900].withOpacity(0.7)
+                  ),
                   child: ListTile(
-                    title: Text("Mahajir Taqarrub", style: TextStyle(fontFamily: Configs.defaultFont,fontWeight: FontWeight.w100),),
-                    subtitle: Text("XII IPA 2", style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12.5),),
-                    trailing: Text("SISWA", style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 20, fontWeight: FontWeight.w500),),
+                    title: Text(
+                      "Mahajir Taqarrub", 
+                      style: TextStyle(
+                        fontWeight: FontWeight.w100,
+                        color: Colors.white
+                      ),
+                    ),
+                    subtitle: Text(
+                      "XII IPA 2", 
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey[300]
+                      ),
+                    ),
+                    trailing: Text(
+                      "SISWA", 
+                      style: TextStyle(
+                        fontSize: 20, 
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -79,12 +69,13 @@ class Home extends StatelessWidget {
         new Expanded(
           child: new GridView.builder(
             itemCount: berandaMenu.length,
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3
             ),
             itemBuilder: (context, index) {
               return Card(
+                margin: EdgeInsets.all(7),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0)
                 ),
@@ -107,7 +98,8 @@ class Home extends StatelessWidget {
                             position: DecorationPosition.foreground,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
-                              color: berandaMenu[index].backgroundMenuColor,
+                              color: Colors.blueGrey[100].withOpacity(0.9)
+                              //color: berandaMenu[index].backgroundMenuColor,
                             ),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10.0),
@@ -140,16 +132,16 @@ class Home extends StatelessWidget {
                                 bottomLeft: const Radius.circular(10.0),
                                 bottomRight: const Radius.circular(10.0)
                               ),
-                              color: Colors.black.withOpacity(0.4)
+                              //color: Colors.black.withOpacity(0.4)
                             ),
                             child: new Center(
                               child: Text(
-                                  berandaMenu[index].menuName,
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.white,
-                                  ),
+                                berandaMenu[index].menuName,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  //color: Colors.white,
                                 ),
+                              ),
                             ),
                           ),
                         )

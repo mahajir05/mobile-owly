@@ -3,6 +3,7 @@ import 'package:owly/main/beranda_page.dart';
 import 'package:owly/main/berita_page.dart';
 import 'package:owly/config/configs.dart';
 import 'package:owly/main/elearning_page.dart';
+import 'package:owly/pembayaran/pembayaran_home.dart';
 
 class DrawerItem {
   String title;
@@ -39,7 +40,7 @@ class HomePageState extends State<HomePage> {
       case 3:
         return new Elearning();
       case 4:
-        return new Berita();
+        return new PembayaranHome();
       default:
         return new Text("Error");
     }

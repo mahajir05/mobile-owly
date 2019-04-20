@@ -19,6 +19,9 @@ class _Elearning extends State<Elearning> {
           child: ListView.builder(
             itemCount: 10,
             shrinkWrap: true,
+            padding: EdgeInsets.only(
+              top: 10
+            ),
             itemBuilder: (context, index) {
               return Card(
                 margin: EdgeInsets.all(10),
@@ -82,31 +85,34 @@ class _Elearning extends State<Elearning> {
 
                             new Align(
                               alignment: Alignment.centerLeft,
-                              child: Card(
-                                margin: EdgeInsets.symmetric(
-                                  vertical: 10,
-                                  horizontal: 10
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(30)
-                                  )
-                                ),
-                                child: Container(
-                                  width: 130,
-                                  padding: EdgeInsets.all(10),
-                                  child: InkWell(
-                                    onTap: () {
-                                      Navigator.push(context, MaterialPageRoute(
-                                        builder: (context) => MateriElearning()
-                                      ));
-                                    },
-                                    child: Text(
-                                      'LIHAT',
-                                      textAlign: TextAlign.center,
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) => MateriElearning(mataPelajaran: 'Pemrograman Berbasis Objek I $index',)
+                                  ));
+                                },
+                                child: Card(
+                                  margin: EdgeInsets.symmetric(
+                                    vertical: 10,
+                                    horizontal: 10
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(30)
+                                    )
+                                  ),
+                                  child: Container(
+                                    width: 130,
+                                    padding: EdgeInsets.all(10),
+                                    // child: Text(
+                                    //   'LIHAT',
+                                    //   textAlign: TextAlign.center,
+                                    // ),
+                                    child: Icon(
+                                      Icons.arrow_forward
                                     ),
                                   ),
-                                )
+                                ),
                               ),
                             )
                           ],

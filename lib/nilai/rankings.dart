@@ -27,18 +27,18 @@ class _Rankings extends State<Rankings> {
 
             if (index == 0) {
               leading = new Image.asset(
-                'assets/images/rank1.png',
+                'assets/icons/rank1.png',
               );
               heightCard = 90;
               sizeText = 16;
               fontWeight = FontWeight.w900;
             } else if (index == 1) {
-              leading = new Image.asset('assets/images/rank2.png');
+              leading = new Image.asset('assets/icons/rank2.png');
               heightCard = 70;
               sizeText = 16;
               fontWeight = FontWeight.bold;
             } else if (index == 2) {
-              leading = new Image.asset('assets/images/rank3.png');
+              leading = new Image.asset('assets/icons/rank3.png');
               heightCard = 70;
               sizeText = 16;
               fontWeight = FontWeight.bold;

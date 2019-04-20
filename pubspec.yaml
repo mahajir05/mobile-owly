@@ -55,17 +55,18 @@ flutter:
     - assets/images/gradeori.jpg
     - assets/images/backgroundabsen.jpg
     - assets/images/grade.png
+    - assets/images/payment-bg.jpg
 
     - assets/icons/absen.png
     - assets/icons/jadwal.png
     - assets/icons/nilai.png
     - assets/icons/teacher.png
     - assets/icons/ranking.png
-    - assets/icons/book.png
-    - assets/icons/money-bag.png
-    - assets/images/rank1.png
-    - assets/images/rank2.png
-    - assets/images/rank3.png
+    - assets/icons/student.png
+    - assets/icons/man.png
+    - assets/icons/rank1.png
+    - assets/icons/rank2.png
+    - assets/icons/rank3.png
 
     - assets/images/student-logo.png
 

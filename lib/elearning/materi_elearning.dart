@@ -1,53 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:owly/config/running_text.dart';
 
 class MateriElearning extends StatefulWidget {
+  final String mataPelajaran;
+
+  const MateriElearning({Key key, this.mataPelajaran}) : super(key: key);
+
   @override
   _MateriElearning createState() => new _MateriElearning();
 }
 
 class _MateriElearning extends State<MateriElearning> {
+
   @override
   Widget build(BuildContext context) {
     
     return Column(
       children: <Widget>[
         new Container(
-          color: Colors.blue,
-          height: 200,
+          // color: Colors.blue,
+          // height: 200,
           child: Stack(
             children: <Widget>[
               new AppBar(
-                title: Text('Mata Pelajaran'),
+                title: MarqueeWidget(
+                  child: Text(widget.mataPelajaran),
+                ),
               ),
 
-              new Positioned(
-                top: 80,
-                left: 10,
-                right: 10,
-                bottom: 10,
-                child: Card(
-                  child: ListTile(
-                    title: Padding(
-                      padding: EdgeInsets.only(
-                        top: 5,
-                        bottom: 10
-                      ),
-                      child: Text(
-                        'Pemrograman Berbasis Objek III',
-                        style: TextStyle(
-                          fontSize: 22
-                        ),
-                      ),
-                    ),
-                    subtitle: Text(
-                      'Muhammad Ulin Nuha, Spd.',
-                      style: TextStyle(
-                        fontSize: 16
-                      ),
-                    ),
-                  ),
-                ),
-              )
+              // new Positioned(
+              //   top: 80,
+              //   left: 10,
+              //   right: 10,
+              //   bottom: 10,
+              //   child: Card(
+              //     child: ListTile(
+              //       title: Padding(
+              //         padding: EdgeInsets.only(
+              //           top: 5,
+              //           bottom: 10
+              //         ),
+              //         child: Text(
+              //           'Pemrograman Berbasis Objek III',
+              //           style: TextStyle(
+              //             fontSize: 22
+              //           ),
+              //         ),
+              //       ),
+              //       subtitle: Text(
+              //         'Muhammad Ulin Nuha, Spd.',
+              //         style: TextStyle(
+              //           fontSize: 16
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ),
