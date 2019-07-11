@@ -26,31 +26,31 @@ class _Absen extends State<Absen> {
               margin: EdgeInsets.only(bottom: 5),
               child: Stack(
                 children: <Widget>[
-                  new DecoratedBox(
-                    position: DecorationPosition.foreground,
-                    decoration: new BoxDecoration(
-                      color: Colors.blue.withOpacity(0.6),
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: [0.35, 0.5],
-                        colors: [
-                          Colors.blue,
-                          Colors.blue[200]
-                        ]
-                      )
-                    ),
-                    child: new Image.asset(
-                      'assets/images/backgroundabsen.jpg',
-                      fit: BoxFit.cover,
-                      height: 230,
-                      width: queryData.size.width,
-                    ),
-                  ),
+                  // new DecoratedBox(
+                  //   position: DecorationPosition.foreground,
+                  //   decoration: new BoxDecoration(
+                  //     color: Colors.blue.withOpacity(0.6),
+                  //     gradient: LinearGradient(
+                  //       begin: Alignment.topCenter,
+                  //       end: Alignment.bottomCenter,
+                  //       stops: [0.35, 0.5],
+                  //       colors: [
+                  //         Colors.blue,
+                  //         Colors.blue[200]
+                  //       ]
+                  //     )
+                  //   ),
+                  //   child: new Image.asset(
+                  //     'assets/images/backgroundabsen.jpg',
+                  //     fit: BoxFit.cover,
+                  //     height: 230,
+                  //     width: queryData.size.width,
+                  //   ),
+                  // ),
 
                   new AppBar(
                     title: Text('Laporan Absen'),
-                    backgroundColor: Colors.transparent,
+                    // backgroundColor: Colors.transparent,
                   ),
 
                   new Positioned.fill(

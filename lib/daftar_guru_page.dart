@@ -17,75 +17,102 @@ class _DaftarGuru extends State<DaftarGuru> {
 
       body: Column(
         children: <Widget>[
+          new ListTile(
+            contentPadding: EdgeInsets.all(0),
+            leading: Container(
+              height: 35,
+              width: 150,
+              decoration: BoxDecoration(
+                color: Colors.green,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20)
+                )
+              ),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 5
+                  ),
+                  child: Text(
+                    'Wali Kelas',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            ),
+          ),
+
           new Card(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10)
             ),
-            child: Column(
-              children: <Widget>[
-                new Container(
-                  width: queryData.size.width,
-                  decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)
-                    )
+            child: new InkWell(
+              onTap: () {},
+              child: new ListTile(
+                title: Text('(Nama Wali Kelas)'),
+                subtitle: Text(
+                  '(Mata Pelajaran)',
+                  style: TextStyle(
+                    fontSize: 12
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      'Wali Kelas',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                  )
                 ),
-
-                new InkWell(
-                  onTap: () {},
-                  child: new ListTile(
-                    title: Text('(Nama Wali Kelas)'),
-                    subtitle: Text(
-                      '(Mata Pelajaran)',
-                      style: TextStyle(
-                        fontSize: 12
+                trailing: Container(
+                  width: 140,
+                  child: Row(
+                    children: <Widget>[
+                      new Expanded(
+                        flex: 1,
+                        child: Container(
+                          child: Text('Hadir', textAlign: TextAlign.right,),
+                        ),
                       ),
-                    ),
-                    trailing: Container(
-                      width: 140,
-                      child: Row(
-                        children: <Widget>[
-                          new Expanded(
-                            flex: 1,
-                            child: Container(
-                              child: Text('Hadir', textAlign: TextAlign.right,),
-                            ),
-                          ),
-                          
-                          new Expanded(
-                            flex: 1,
-                            child: Container(
-                              child: Text('R401', textAlign: TextAlign.right,),
-                            ),
-                          )
-                        ],
-                      ),
-                    )
+                      
+                      new Expanded(
+                        flex: 1,
+                        child: Container(
+                          child: Text('R401', textAlign: TextAlign.right,),
+                        ),
+                      )
+                    ],
                   ),
                 )
-              ],
+              ),
             )
           ),
 
-          new Container(
-            height: 3,
-            width: 200,
-            color: Colors.black12,
-            margin: EdgeInsets.symmetric(vertical: 10),
+          new ListTile(
+            contentPadding: EdgeInsets.all(0),
+            leading: Container(
+              height: 35,
+              width: 150,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20)
+                )
+              ),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 5
+                  ),
+                  child: Text(
+                    'Guru Mapel',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              )
+            ),
           ),
 
           new Expanded(

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:owly/berita/berita_page.dart';
 import 'package:owly/main/beranda_page.dart';
-import 'package:owly/main/berita_page.dart';
 import 'package:owly/config/configs.dart';
-import 'package:owly/main/elearning_page.dart';
-import 'package:owly/pembayaran/pembayaran_home.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class DrawerItem {
   String title;
@@ -27,6 +26,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  //FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+
   int _selectedDrawerIndex = 0;
 
   _getDrawerItemWidget(int pos) {
@@ -37,10 +38,10 @@ class HomePageState extends State<HomePage> {
         return new Berita();
       case 2:
         return new Berita();
-      case 3:
-        return new Elearning();
-      case 4:
-        return new PembayaranHome();
+      // case 3:
+      //   return new Elearning();
+      // case 4:
+      //   return new PembayaranHome();
       default:
         return new Text("Error");
     }
@@ -83,27 +84,33 @@ class HomePageState extends State<HomePage> {
       },
     );
 
-    return new Scaffold(
-      drawer: new Drawer(
-        child: new ListView(
-          children: <Widget>[
-            new UserAccountsDrawerHeader(
-              accountName: new Text("Mahajir Taqarrub",style: TextStyle(fontFamily: Configs.defaultFont,fontWeight: FontWeight.w100)), 
-              accountEmail: Text("KELAS XI.B - NIS: 12150026", style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12)),
-              currentAccountPicture: CircleAvatar(backgroundImage: new AssetImage('assets/images/student-logo.png')),
-            ),
-            
-            new Column(
-              children: <Widget>[
-                drawerOptions1,
-                new Divider(),
-                drawerOptions2
-              ],
-            )
-          ],
-        ),
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        fontFamily: 'Ubuntu'
       ),
-      body: _getDrawerItemWidget(_selectedDrawerIndex),
+      home: new Scaffold(
+        drawer: new Drawer(
+          child: new ListView(
+            children: <Widget>[
+              new UserAccountsDrawerHeader(
+                accountName: new Text("Mahajir Taqarrub",style: TextStyle(fontFamily: Configs.defaultFont,fontWeight: FontWeight.w100)), 
+                accountEmail: Text("KELAS XI.B - NIS: 12150026", style: TextStyle(fontFamily: Configs.defaultFont,fontSize: 12)),
+                currentAccountPicture: CircleAvatar(backgroundImage: new AssetImage('assets/images/student-logo.png')),
+              ),
+              
+              new Column(
+                children: <Widget>[
+                  drawerOptions1,
+                  new Divider(),
+                  // drawerOptions2
+                ],
+              )
+            ],
+          ),
+        ),
+        body: _getDrawerItemWidget(_selectedDrawerIndex),
+      ),
     );
   }
 }

@@ -23,7 +23,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  flutter_local_notifications: ^0.7.0
   intl: ^0.15.8
+  flutter_full_pdf_viewer: ^1.0.4
+  path_provider: ^0.4.1
+  http: ^0.11.3+16
 
   
 
@@ -50,25 +54,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/sekolah.jpg
-    - assets/images/background_button.jpg
-    - assets/images/gradeori.jpg
-    - assets/images/backgroundabsen.jpg
-    - assets/images/grade.png
-    - assets/images/payment-bg.jpg
-
-    - assets/icons/absen.png
-    - assets/icons/jadwal.png
-    - assets/icons/nilai.png
-    - assets/icons/teacher.png
-    - assets/icons/ranking.png
-    - assets/icons/student.png
-    - assets/icons/man.png
-    - assets/icons/rank1.png
-    - assets/icons/rank2.png
-    - assets/icons/rank3.png
-
-    - assets/images/student-logo.png
+    - assets/
+    - assets/images/
+    - assets/icons/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

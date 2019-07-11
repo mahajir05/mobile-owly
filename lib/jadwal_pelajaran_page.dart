@@ -1,15 +1,25 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:intl/intl.dart';
+import 'package:owly/class/schedule_notification.dart';
 import 'package:owly/config/configs.dart';
+import 'package:quiver/async.dart';
 
 class JadwalPelajaran extends StatefulWidget {
   @override
   _JadwalPelajaran createState() => _JadwalPelajaran();
 }
 
-class _JadwalPelajaran extends State<JadwalPelajaran> {
+class _JadwalPelajaran extends State<JadwalPelajaran> with TickerProviderStateMixin {
+
+  // notification
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
+
   String hari;
   String _randomString(int length) {
     var rand = new Random();
@@ -25,17 +35,53 @@ class _JadwalPelajaran extends State<JadwalPelajaran> {
 
   var refreshKey = GlobalKey<RefreshIndicatorState>();
 
+  DateTime _selectedTime = DateTime(2019, 05, 03, 21, 56, 00);
+  int estimateTs = DateTime(2019, 05, 03, 21, 56, 00).millisecondsSinceEpoch;
+  static const _platform = const MethodChannel('schedule_notifications_app');
+
   Future<Null> refreshList() async {
     refreshKey.currentState?.show();
     await Future.delayed(Duration(seconds: 2));
 
     setState(() {
       _randomString(10);
+      //showNotification();
     });
 
     return null;
   }
 
+  // @override
+  // void initState() {
+  //   super.initState();
+
+  //   flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
+  //   var android = new AndroidInitializationSettings('ic_launcher');
+  //   var iOS = new IOSInitializationSettings();
+  //   var initSetting = new InitializationSettings(android, iOS);
+  //   flutterLocalNotificationsPlugin.initialize(initSetting, onSelectNotification: onSelectNotification);
+  // }
+
+  // notification
+  // Future onSelectNotification (String payload) async {
+  //   debugPrint("payload: $payload");
+  //   showDialog(context: context, builder: (_) => new AlertDialog(
+  //     title: new Text("Notification"),
+  //     content: new Text("$payload"),
+  //   ));
+  // }
+
+  // showNotification() async{
+  //   var android = new AndroidNotificationDetails("channel id", "channel NAME", "channel Description");
+  //   var iOS = new IOSNotificationDetails();
+  //   var platform = new NotificationDetails(android, iOS);
+  //   await flutterLocalNotificationsPlugin.show(
+  //     0, 
+  //     "New Notification", 
+  //     "Flutter Local Notification", 
+  //     platform
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -108,8 +154,11 @@ class _JadwalPelajaran extends State<JadwalPelajaran> {
                         ),
 
                         new Container(
-                          height: 70,
                           child: ListTile(
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 10,
+                              horizontal: 15
+                            ),
                             title: Text('Mata Pelajaran 1'),
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,7 +182,34 @@ class _JadwalPelajaran extends State<JadwalPelajaran> {
                                 ),
                               ],
                             ),
-                            trailing: Text('(Countdown)'),
+                            trailing: Container(
+                              // height: 50,
+                              width: 90,
+                              child: Center(
+                                  child: Text(
+                                    '(countdown)'
+                                  )
+                                ),
+                              // child: StreamBuilder(
+                              //   stream: Stream.periodic(Duration(seconds: 1), (i) => i),
+                              //   builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+                              //     // DateFormat format = DateFormat("mm:ss");
+                              //     // int now = DateTime
+                              //     //     .now()
+                              //     //     .millisecondsSinceEpoch;
+                              //     // Duration remaining = Duration(milliseconds: estimateTs - now);
+                              //     // var dateString = '${remaining.inHours}:${format.format(
+                              //     //     DateTime.fromMillisecondsSinceEpoch(remaining.inMilliseconds))}';
+                              //     // //print(dateString);
+                              //     return Container(
+                              //       //color: Colors.greenAccent.withOpacity(0.3),
+                              //       alignment: Alignment.center,
+                              //       //child: Text(dateString),
+                              //       child: Text("(countdown)"),
+                              //     );
+                              //   }
+                              // ),
+                            ),
                           ),
                         )
                       ],
@@ -506,4 +582,34 @@ class _JadwalPelajaran extends State<JadwalPelajaran> {
       ),
     );
   }
+
+
+  // Future<dynamic> _getIconResourceId() async {
+  //   int iconResourceId;
+  //   try {
+  //     iconResourceId = await _platform.invokeMethod('getIconResourceId');
+  //   } on PlatformException catch (e) {
+  //     print("Error on get icon resource id: x");
+  //   }
+
+  //   setState(() {
+  //     ScheduleNotifications.setNotificationIcon(iconResourceId);
+  //   });
+  // }
+
+  // void _scheduleAlarm() {
+  //   try {
+  //     ScheduleNotifications.schedule("Text", _selectedTime, []);
+  //   } on Exception {
+  //     print("Whooops :x");
+  //   }
+  // }
+
+  // void _unscheduleAlarm() {
+  //   try {
+  //     ScheduleNotifications.unschedule();
+  //   } on Exception {
+  //     print("Whooops :x");
+  //   }
+  // }
 }
