@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:owly/home_page.dart';
 
 class Login extends StatefulWidget {
 
@@ -220,7 +221,11 @@ class _Login extends State<Login> {
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
-                      onPressed: () => {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => HomePage())
+                        );
+                      },
                     ),
                   ),
                 ],
